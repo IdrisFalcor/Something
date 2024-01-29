@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'about', to:'pages#about'
+  devise_for :users
   resources :posts do
     resources :comments
   end  
@@ -8,5 +10,6 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
+  root "pages#home"
   # root "posts#index"
 end
